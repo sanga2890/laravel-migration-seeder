@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Products</title>
-    </head>
-    <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($products_list as $product)
-                    <tr>
-                        <td>{{ $product->id}}</td>
-                        <td>{{ $product->name}}</td>
-                        <td>{{ $product->type}}</td>
-                        <td>{{ $product->price}}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+@extends('layouts.app');
 
-    </body>
-</html>
+@section('content')
+    <div class="container">
+        <div class="row d-flex text-center">
+            <p class="col-md-3"><strong>ID</strong></p>
+            <p class="col-md-3"><strong>Name</strong></p>
+            <p class="col-md-3"><strong>Type</strong></p>
+            <p class="col-md-3"><strong>Price</strong></p>
+            @foreach ($products_list as $product)
+
+
+            <p class="col-md-3">{{ $product->id}}</p>
+            <p class="col-md-3">{{ $product->name}}</p>
+            <p class="col-md-3">{{ $product->type}}</p>
+            <p class="col-md-3">{{ $product->price}}</p>
+
+            @endforeach
+        </div>
+
+    </div>
+
+@endsection
